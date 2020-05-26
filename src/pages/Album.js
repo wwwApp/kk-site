@@ -8,7 +8,7 @@ class Album extends Component {
     return (
       <AlbumContainer id="album-page">
         <section className="page-section selected-album-section bg--neutral">
-          <TwoColumnHero />
+          <TwoColumnHero fullImage={true} />
         </section>
         <section className="page-section album-grid-section">
           <Grid colClass="three-col">

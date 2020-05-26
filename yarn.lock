@@ -6366,10 +6366,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kk-design-system@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/kk-design-system/-/kk-design-system-1.5.5.tgz#8cd130da754259730d988c8434ab1acc1cce6429"
-  integrity sha512-q0Tbj71uwa4kosDPBFTChYcr1DE6rNEwX+3Xlev0x5LjXhEjg7ZXrGa6g6L3eUhLfddh2AdRCBx2HKiAuF4zdw==
+kk-design-system@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/kk-design-system/-/kk-design-system-1.5.7.tgz#7a67d06e6da6f46199f10ce3cf86b5bd734ff087"
+  integrity sha512-rkvuBP8uqIiET8mQw4EVthiJ+FQU1/SyWKa9r4esllN2ElJjx3/GohhXriVH0QYmIxGO/bd+e0LGbi8iC/aXjg==
   dependencies:
     babel-preset-react-app "^9.1.2"
     react-slick "^0.26.1"
