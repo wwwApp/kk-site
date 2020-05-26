@@ -18,7 +18,7 @@ class Album extends Component {
         <section className="page-section album-grid-section">
           <Grid colClass="three-col">
             <Card
-              tag=""
+              tag="Trending"
               description=""
               title="Comrade K.K."
               image="https://vignette.wikia.nocookie.net/animalcrossing/images/6/67/NH-Album_Cover-Comrade_K.K..png/revision/latest?cb=20200502232547"

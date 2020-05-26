@@ -42,7 +42,11 @@ class Home extends Component {
 const HomeContainer = styled.div`
   .featured-section {
     .c-two-col-hero__title {
-      font-size: 5rem;
+      font-size: 3rem;
+
+      @media only screen and (min-width: 768px) {
+        font-size: 5rem;
+      }
     }
   }
 
