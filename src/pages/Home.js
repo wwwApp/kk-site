@@ -30,7 +30,12 @@ class Home extends Component {
 const HomeContainer = styled.div`
   .more-section {
     & > *:not(.more-btn-wrapper) {
-      height: 25rem;
+      height: auto;
+      margin-bottom: 3rem;
+
+      @media only screen and (min-width: 768px) {
+        height: 30rem;
+      }
     }
   }
 
