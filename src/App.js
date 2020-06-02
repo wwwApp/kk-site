@@ -11,8 +11,12 @@ function App() {
     <AppContainer className="App">
       <Header />
       <Switch>
-        <Route exact path="/" render={() => <Home />}></Route>
-        <Route path="/albums" render={() => <Album />}></Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/albums">
+          <Album />
+        </Route>
       </Switch>
       <Footer />
     </AppContainer>
