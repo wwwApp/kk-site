@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Grid, Button } from "kk-design-system";
+import { Card, Grid, Button, BgHero } from "kk-design-system";
 import styled from "styled-components";
 import PlayBar from "./../components/PlayBar";
 
@@ -9,24 +9,26 @@ class Album extends Component {
     return (
       <AlbumContainer id="album-page">
         <section className="page-section selected-album-section bg--neutral">
-          <Grid colClass="twoCol">
-            <div className="selected-album-section__media">
-              <div className="selected-album-section__media-bg"></div>
-              <img
-                src="https://vignette.wikia.nocookie.net/animalcrossing/images/3/3c/NH-Album_Cover-Wandering.png/revision/latest?cb=20200503003456"
-                alt="Wondering"
-              />
-              <PlayBar />
-            </div>
-            <div className="selected-album-section__text">
-              <h3>Wondering</h3>
-              <p>
-                It is an upbeat tune with some minor scale notes. The general
-                composition theme is repetitive and "wandering" in nature, hence
-                its name.
-              </p>
-            </div>
-          </Grid>
+          <BgHero bgSize={80}>
+            <Grid colClass="twoCol">
+              <div className="selected-album-section__media">
+                <div className="selected-album-section__media-bg"></div>
+                <img
+                  src="https://vignette.wikia.nocookie.net/animalcrossing/images/3/3c/NH-Album_Cover-Wandering.png/revision/latest?cb=20200503003456"
+                  alt="Wondering"
+                />
+                <PlayBar />
+              </div>
+              <div className="selected-album-section__text">
+                <h3>Wondering</h3>
+                <p>
+                  It is an upbeat tune with some minor scale notes. The general
+                  composition theme is repetitive and "wandering" in nature,
+                  hence its name.
+                </p>
+              </div>
+            </Grid>
+          </BgHero>
         </section>
         <section className="page-section album-grid-section">
           <Grid colClass="three-col">

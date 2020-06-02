@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Grid, Card } from "kk-design-system";
+import { Button, Grid, Card, BgHero } from "kk-design-system";
 import styled from "styled-components";
 import kkImage from "./../assets/kk-stand.png";
 import PlayBar from "./../components/PlayBar";
@@ -10,19 +10,21 @@ class Home extends Component {
     return (
       <HomeContainer id="home-page">
         <section className="page-section artist-section">
-          <div className="o-container">
-            <div className="artist-section__inner">
-              <h2 className="section-title">KK Slider</h2>
-              <div className="artist-section__image-wrapper">
-                <div className="artist-section__image-bg"></div>
-                <img
-                  className="artist-section__image"
-                  src={kkImage}
-                  alt="KK Slider"
-                />
+          <BgHero bgSize={80}>
+            <div className="o-container">
+              <div className="artist-section__inner">
+                <h2 className="section-title">KK Slider</h2>
+                <div className="artist-section__image-wrapper">
+                  <div className="artist-section__image-bg"></div>
+                  <img
+                    className="artist-section__image"
+                    src={kkImage}
+                    alt="KK Slider"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </BgHero>
         </section>
         <section className="page-section featured-album-section">
           <div className="o-container">
