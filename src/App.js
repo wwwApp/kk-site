@@ -11,11 +11,11 @@ function App() {
     <AppContainer className="App">
       <Header />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route path="/albums">
           <Album />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
       <Footer />
