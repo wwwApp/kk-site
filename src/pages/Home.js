@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <HomeContainer id="home-page">
         <section className="page-section artist-section">
-          <div class="o-container">
+          <div className="o-container">
             <div className="artist-section__inner">
               <h2 className="section-title">KK Slider</h2>
               <div className="artist-section__image-wrapper">

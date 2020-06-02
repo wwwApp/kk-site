@@ -6,7 +6,7 @@ import download from "./../assets/download.svg";
 const PlayBar = (props) => {
   return (
     <PlayBarWrapper className="c-playbar">
-      <div class="c-playbar__inner bg--neutral">
+      <div className="c-playbar__inner bg--neutral">
         <button>
           <img src={play} alt="Play" />
         </button>
