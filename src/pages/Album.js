@@ -2,9 +2,24 @@ import React, { Component } from "react";
 import { Card, Grid, Button, BgHero } from "kk-design-system";
 import styled from "styled-components";
 import PlayBar from "./../components/PlayBar";
+import { albums } from "./../assets/data";
 
 class Album extends Component {
-  state = {};
+  state = {
+    title: "",
+    image: "",
+  };
+
+  componentDidMount() {
+    const url = window.location.href.split("/");
+    const currentAlbumKey = url[url.length - 1];
+
+    this.setState({
+      title: albums[currentAlbumKey].title,
+      image: albums[currentAlbumKey].image,
+    });
+  }
+
   render() {
     return (
       <AlbumContainer id="album-page">
@@ -13,18 +28,14 @@ class Album extends Component {
             <Grid colClass="twoCol">
               <div className="selected-album-section__media">
                 <div className="selected-album-section__media-bg"></div>
-                <img
-                  src="https://vignette.wikia.nocookie.net/animalcrossing/images/3/3c/NH-Album_Cover-Wandering.png/revision/latest?cb=20200503003456"
-                  alt="Wondering"
-                />
+                <img src={this.state.image} alt={this.state.title} />
                 <PlayBar />
               </div>
               <div className="selected-album-section__text">
-                <h3>Wondering</h3>
+                <h3>{this.state.title}</h3>
                 <p>
                   It is an upbeat tune with some minor scale notes. The general
-                  composition theme is repetitive and "wandering" in nature,
-                  hence its name.
+                  composition theme is repetitive.
                 </p>
               </div>
             </Grid>
@@ -32,72 +43,18 @@ class Album extends Component {
         </section>
         <section className="page-section album-grid-section">
           <Grid colClass="three-col">
-            <Card
-              noText
-              url="/albums"
-              tag=""
-              title="My Place"
-              description=""
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/6/6d/NH-Album_Cover-My_Place.png/revision/latest?cb=20200503002809"
-            />
-            <Card
-              noText
-              url="/albums"
-              tag=""
-              title="Marine Song"
-              description=""
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/f/ff/NH-Album_Cover-Marine_Song_2001.png/revision/latest?cb=20200503002702"
-            />
-            <Card
-              noText
-              url="/albums"
-              tag=""
-              title="Spring Blossoms"
-              description=""
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/b/bb/NH-Album_Cover-Spring_Blossoms.png/revision/latest?cb=20200503003122"
-            />
-            <Card
-              tag=""
-              description=""
-              title="Comrade K.K."
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/6/67/NH-Album_Cover-Comrade_K.K..png/revision/latest?cb=20200502232547"
-              noText
-            />
-            <Card
-              tag=""
-              description=""
-              title="DJ K.K."
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/7/7a/NH-Album_Cover-DJ_K.K..png/revision/latest?cb=20200502232717"
-              noText
-            />
-            <Card
-              tag=""
-              description=""
-              title="Drivin"
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/0/0b/NH-Album_Cover-Drivin%27.png/revision/latest?cb=20200502233001"
-              noText
-            />
-            <Card
-              tag="Top Hit"
-              description=""
-              title="Aloha"
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/5/5d/NH-Album_Cover-Aloha_K.K..png/revision/latest?cb=20200502231742"
-              noText
-            />
-            <Card
-              tag=""
-              description=""
-              title="Agent K.K."
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/9/91/NH-Album_Cover-Agent_K.K..png/revision/latest?cb=20200502231523"
-              noText
-            />
-            <Card
-              tag=""
-              description=""
-              title="Bubblegum"
-              image="https://vignette.wikia.nocookie.net/animalcrossing/images/e/e6/NH-Album_Cover-Bubblegum_K.K..png/revision/latest?cb=20200502232328"
-              noText
-            />
+            {Object.keys(albums).map((album, index) => {
+              return (
+                <Card
+                  noText
+                  url={`/albums/${album}`}
+                  tag={`${index === 3 ? "top hit" : ""}`}
+                  title={albums[album].title}
+                  description=""
+                  image={albums[album].image}
+                />
+              );
+            })}
           </Grid>
 
           <div className="more-btn-wrapper o-container">

@@ -3,6 +3,7 @@ import { Button, Grid, Card, BgHero } from "kk-design-system";
 import styled from "styled-components";
 import kkImage from "./../assets/kk-stand.png";
 import PlayBar from "./../components/PlayBar";
+import { albums } from "./../assets/data";
 
 class Home extends Component {
   state = {};
@@ -42,8 +43,7 @@ class Home extends Component {
                   <h3>Wondering</h3>
                   <p>
                     It is an upbeat tune with some minor scale notes. The
-                    general composition theme is repetitive and "wandering" in
-                    nature, hence its name.
+                    general composition theme is repetitive.
                   </p>
                 </div>
               </Grid>
@@ -53,30 +53,20 @@ class Home extends Component {
         <section className="page-section release-section">
           <div className="o-container">
             <Grid colClass="three-col">
-              <Card
-                noText
-                url="/albums"
-                tag=""
-                title="My Place"
-                description=""
-                image="https://vignette.wikia.nocookie.net/animalcrossing/images/6/6d/NH-Album_Cover-My_Place.png/revision/latest?cb=20200503002809"
-              />
-              <Card
-                noText
-                url="/albums"
-                tag=""
-                title="Marine Song"
-                description=""
-                image="https://vignette.wikia.nocookie.net/animalcrossing/images/f/ff/NH-Album_Cover-Marine_Song_2001.png/revision/latest?cb=20200503002702"
-              />
-              <Card
-                noText
-                url="/albums"
-                tag=""
-                title="Spring Blossoms"
-                description=""
-                image="https://vignette.wikia.nocookie.net/animalcrossing/images/b/bb/NH-Album_Cover-Spring_Blossoms.png/revision/latest?cb=20200503003122"
-              />
+              {Object.keys(albums)
+                .slice(0, 3)
+                .map((album) => {
+                  return (
+                    <Card
+                      noText
+                      url={`/albums/${album}`}
+                      tag=""
+                      title={albums[album].title}
+                      description=""
+                      image={albums[album].image}
+                    />
+                  );
+                })}
             </Grid>
 
             <div className="more-btn-wrapper">
