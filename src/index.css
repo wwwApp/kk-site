@@ -10,5 +10,14 @@
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--kk-white);
+}
+
+/* custom change to design system compo */
+/* cards */
+.c-card__tag-wrapper {
+  background-color: var(--kk-orange) !important;
+}
+
+.c-card__link:hover {
+  box-shadow: 3px 3px var(--kk-white), 5px 5px var(--kk-orange) !important;
 }

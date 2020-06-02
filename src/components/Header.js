@@ -2,26 +2,36 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Header } from "kk-design-system";
 import { NavLink } from "react-router-dom";
+import logoSvg from "./../assets/logo.svg";
 
 const KKHeader = (props) => {
   const logo = (
-    <NavLink to=".">
-      <LogoWrapper className="logo">KK Site</LogoWrapper>
-    </NavLink>
+    <LogoWrapper>
+      <NavLink to=".">
+        <img className="header__logo" src={logoSvg} alt="kK Site Logo" />
+      </NavLink>
+    </LogoWrapper>
   );
 
   return (
     <HeaderWrapper>
-      <Header logo={logo}>
-        <NavLink to="/albums">albums</NavLink>
-        <NavLink to="/albums">albums</NavLink>
-      </Header>
+      <Header logo={logo} />
     </HeaderWrapper>
   );
 };
 
-const LogoWrapper = styled.div``;
+const LogoWrapper = styled.div`
+  .header__logo {
+    width: 5rem;
+  }
+`;
 
-const HeaderWrapper = styled.div``;
+const HeaderWrapper = styled.div`
+  background-color: var(--kk-neutral);
+
+  .c-header__inner {
+    justify-content: center;
+  }
+`;
 
 export default KKHeader;
