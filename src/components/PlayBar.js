@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import play from "./../assets/play.svg";
-import download from "./../assets/download.svg";
+import { ReactComponent as Play } from "./../assets/play.svg";
+import { ReactComponent as Download } from "./../assets/download.svg";
 
 const PlayBar = (props) => {
   return (
     <PlayBarWrapper className="c-playbar">
       <div className="c-playbar__inner bg--neutral">
-        <button>
-          <img src={play} alt="Play" />
+        <button aria-label="play">
+          <Play />
         </button>
-        <button>
-          <img src={download} alt="Download" />
+        <button aria-label="download">
+          <Download />
         </button>
       </div>
     </PlayBarWrapper>
@@ -28,12 +28,29 @@ const PlayBarWrapper = styled.div`
     padding: 1rem;
     border: 2px solid var(--kk-orange);
 
-    img {
+    svg {
       width: 25px;
       height: auto;
 
+      line,
+      path {
+        transition: all 0.3s ease-in;
+      }
+    }
+
+    button {
       &:first-child {
-        width: 20px;
+        svg {
+          width: 20px;
+        }
+      }
+
+      &:hover {
+        path,
+        line {
+          fill: var(--kk-black);
+          stroke: var(--kk-black);
+        }
       }
     }
   }
